@@ -62,13 +62,14 @@ class Store {
           brief: 'Wrapped BNB',
           link: 'https://bscscan.com/token/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
           depositsEnabled: true,
-          totalRewards: 14000,
+          totalRewards: 0,
           tokens: [
             {
               id: 'wbnb',
               address: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
               symbol: 'wbnb',
               abi: config.erc20ABI,
+              rewardTokenAddress: config.rewardTokenAddress,
               rewardsAddress: config.wbnbPoolAddress,
               rewardsABI: config.govPoolABI,
               rewardsSymbol: 'BIFI',
@@ -87,13 +88,14 @@ class Store {
           brief: 'Ethereum Token',
           link: 'https://ethereum.org',
           depositsEnabled: true,
-          totalRewards: 14000,
+          totalRewards: 0,
           tokens: [
             {
               id: 'eth',
               address: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
               symbol: 'eth',
               abi: config.erc20ABI,
+              rewardTokenAddress: config.rewardTokenAddress,
               rewardsAddress: config.ethPoolAddress,
               rewardsABI: config.govPoolABI,
               rewardsSymbol: 'BIFI',
@@ -112,13 +114,14 @@ class Store {
           brief: 'ChainLink Token',
           link: 'https://chain.link',
           depositsEnabled: true,
-          totalRewards: 14000,
+          totalRewards: 0,
           tokens: [
             {
               id: 'link',
               address: '0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD',
               symbol: 'link',
               abi: config.erc20ABI,
+              rewardTokenAddress: config.rewardTokenAddress,
               rewardsAddress: config.linkPoolAddress,
               rewardsABI: config.govPoolABI,
               rewardsSymbol: 'BIFI',
@@ -137,13 +140,14 @@ class Store {
           brief: 'C.R.E.A.M.',
           link: 'https://cream.finance',
           depositsEnabled: true,
-          totalRewards: 14000,
+          totalRewards: 0,
           tokens: [
             {
               id: 'cream',
               address: '0xd4CB328A82bDf5f03eB737f37Fa6B370aef3e888',
               symbol: 'cream',
               abi: config.erc20ABI,
+              rewardTokenAddress: config.rewardTokenAddress,
               rewardsAddress: config.creamPoolAddress,
               rewardsABI: config.govPoolABI,
               rewardsSymbol: 'BIFI',
@@ -161,13 +165,14 @@ class Store {
           brief: 'LP BSCSwap',
           link: 'https://bscswap.info/pair/0x1EbF0eE99971c6269062C3b480e8e23B7A74756B',
           depositsEnabled: true,
-          totalRewards: 8000,
+          totalRewards: 0,
           tokens: [
             {
               id: 'bnb-busd',
               address: '0x1EbF0eE99971c6269062C3b480e8e23B7A74756B',
               symbol: 'bnb-busd',
               abi: config.erc20ABI,
+              rewardTokenAddress: config.rewardTokenAddress,
               rewardsAddress: config.busdLpPoolAddress,
               rewardsABI: config.govPoolABI,
               rewardsSymbol: 'BIFI',
@@ -185,13 +190,14 @@ class Store {
           brief: 'LP BSCSwap',
           link: 'https://bscswap.info/pair/0x7270Fd3Bfe698Db8bE63B9e63c28fA0bCb3AED8C',
           depositsEnabled: true,
-          totalRewards: 8000,
+          totalRewards: 0,
           tokens: [
             {
               id: 'bnb-sparta',
               address: '0x7270Fd3Bfe698Db8bE63B9e63c28fA0bCb3AED8C',
               symbol: 'bnb-sparta',
               abi: config.erc20ABI,
+              rewardTokenAddress: config.rewardTokenAddress,
               rewardsAddress: config.spartaLpPoolAddress,
               rewardsABI: config.govPoolABI,
               rewardsSymbol: 'BIFI',
@@ -216,6 +222,7 @@ class Store {
               address: '0x75b4BA20405268B131A5849Cce49ff74fcE3d0c7',
               symbol: 'BIFI',
               abi: config.erc20ABI,
+              rewardTokenAddress: config.rewardTokenAddress,
               rewardsAddress: config.bifiPoolAddress,
               rewardsABI: config.erc20ABI,
               rewardsSymbol: 'wBNB',
@@ -312,6 +319,9 @@ class Store {
                 callbackInnerInner => {
                   this._getTotalValueLocked(web3, token, account, callbackInnerInner);
                 },
+                callbackInnerInner => {
+                  this._getTotalRewards(web3, token, account, callbackInnerInner);
+                },
               ],
               (err, data) => {
                 if (err) {
@@ -376,6 +386,9 @@ class Store {
                 },
                 callbackInnerInner => {
                   this._getTotalValueLocked(web3, token, account, callbackInnerInner);
+                },
+                callbackInnerInner => {
+                  this._getTotalRewards(web3, token, account, callbackInnerInner);
                 },
               ],
               (err, data) => {
@@ -514,6 +527,17 @@ class Store {
       let tvl = await lpTokenContract.methods.balanceOf(asset.rewardsAddress).call({ from: account.address });
       tvl = parseFloat(tvl) / 10 ** asset.decimals;
       callback(null, parseFloat(tvl));
+    } catch (ex) {
+      return callback(ex);
+    }
+  };
+
+  _getTotalRewards = async (web3, asset, account, callback) => {
+    let erc20Contract = new web3.eth.Contract(asset.abi, asset.rewardsTokenAddress);
+    try {
+      let totalRewards = await erc20Contract.methods.balanceOf(asset.rewardsAddress).call({ from: account.address });
+      totalRewards = parseFloat(totalRewards) / 10 ** asset.decimals;
+      callback(null, parseFloat(totalRewards));
     } catch (ex) {
       return callback(ex);
     }

@@ -6,7 +6,7 @@ const config = {
   busdLpPoolAddress: '0x1263F0BFfE2D740Ea3279416D0e84943B66958eb',
   spartaLpPoolAddress: '0x2b8C4aD8053b7933CFde936F16aBc55BB5F694c6',
   bifiPoolAddress: '0x75b4BA20405268B131A5849Cce49ff74fcE3d0c7',
-
+  rewardTokenAddress: '0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
   govPoolABI: [
     {
       anonymous: false,
