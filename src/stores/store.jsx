@@ -66,7 +66,7 @@ class Store {
           depositsEnabled: true,
           tokens: [
             {
-              id: '1RTH',
+              id: '1EARTH',
               address: '0x04b60a0e6aa7f9e36754ad8d24a66f47df0123ee',
               symbol: '1RTH',
               abi: config.erc20ABI,
