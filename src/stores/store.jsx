@@ -93,7 +93,7 @@ class Store {
           tokens: [
             {
               id: 'TETH',
-              address: '0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD',
+              address: '0x9bB6E0Ed72F18857320C777be1eB7680630b33cb',
               symbol: 'TETH',
               abi: config.erc20ABI,
               rewardsToken: '0x04b60A0e6Aa7F9E36754AD8D24A66f47DF0123EE',
