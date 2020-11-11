@@ -93,7 +93,7 @@ class Store {
           tokens: [
             {
               id: 'eth',
-              address: '0x9bB6E0Ed72F18857320C777be1eB7680630b33cb',
+              address: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
               symbol: 'eth',
               abi: config.erc20ABI,
               rewardsToken: '0x04b60A0e6Aa7F9E36754AD8D24A66f47DF0123EE',
