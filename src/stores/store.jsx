@@ -71,7 +71,7 @@ class Store {
               address: '0x9bB6E0Ed72F18857320C777be1eB7680630b33cb',
               symbol: 'eth',
               abi: config.erc20ABI,
-              rewardsToken: '0x04b60a0e6aa7f9e36754ad8d24a66f47df0123ee',
+              rewardsToken: '0x04b60A0e6Aa7F9E36754AD8D24A66f47DF0123EE',
               rewardsAddress: config.ethPoolAddress,
               rewardsABI: config.govPoolABI,
               rewardsSymbol: '1rth',
