@@ -85,7 +85,7 @@ class Store {
         },
 
         {
-          id: 'ETH',
+          id: 'eth',
           name: 'ETH',
           brief: 'Ethereum Token',
           link: 'https://ethereum.org',
@@ -96,10 +96,10 @@ class Store {
               address: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
               symbol: 'eth',
               abi: config.erc20ABI,
-              rewardsToken: '0x04b60A0e6Aa7F9E36754AD8D24A66f47DF0123EE',
+              rewardsToken: '0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
               rewardsAddress: config.ethPoolAddress,
               rewardsABI: config.govPoolABI,
-              rewardsSymbol: '1RTH',
+              rewardsSymbol: 'BIFI',
               decimals: 18,
               balance: 0,
               stakedBalance: 0,
