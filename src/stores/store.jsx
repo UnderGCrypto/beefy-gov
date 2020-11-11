@@ -59,16 +59,16 @@ class Store {
 
       rewardPools: [
         {
-              id: 'wbnb',
-          name: 'Earth',
-          brief: 'Earth',
-           link: 'https://ropsten.etherscan.io/token/0x04b60a0e6aa7f9e36754ad8d24a66f47df0123ee',
+             id: 'wbnb',
+          name: 'WBNB',
+          brief: 'Wrapped BNB',
+           link: 'https://bscscan.com/token/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
           depositsEnabled: true,
           tokens: [
             {
-               id: '1earth',
-              address: '0x04b60a0e6aa7f9e36754ad8d24a66f47df0123ee',
-              symbol: '1rth',
+               id: 'wbnb',
+              address: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+              symbol: 'wbnb',
               abi: config.erc20ABI,
               rewardsToken: '0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
               rewardsAddress: config.wbnbPoolAddress,
