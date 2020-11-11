@@ -219,7 +219,7 @@ class Store {
           depositsEnabled: true,
           tokens: [
             {
-              id: 'bifi',
+              id: 'tETH',
               address: '0x9bB6E0Ed72F18857320C777be1eB7680630b33cb',
               symbol: 'bifi',
               abi: config.erc20ABI,
