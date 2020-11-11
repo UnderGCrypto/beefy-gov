@@ -60,21 +60,21 @@ class Store {
       rewardPools: [
       
         {
-          id: 'eth',
-          name: 'ETH',
+          id: 'teth',
+          name: 'Test ETH',
           brief: 'Ethereum Token',
-          link: 'https://ethereum.org',
+          link: 'https://ropsten.etherscan.io/',
           depositsEnabled: true,
           tokens: [
             {
-              id: 'eth',
-              address: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
+              id: 'teth',
+              address: '0x9bB6E0Ed72F18857320C777be1eB7680630b33cb',
               symbol: 'eth',
               abi: config.erc20ABI,
-              rewardsToken: '0xCa3F508B8e4Dd382eE878A314789373D80A5190A',
+              rewardsToken: '0x04b60a0e6aa7f9e36754ad8d24a66f47df0123ee',
               rewardsAddress: config.ethPoolAddress,
               rewardsABI: config.govPoolABI,
-              rewardsSymbol: 'BIFI',
+              rewardsSymbol: '1rth',
               decimals: 18,
               balance: 0,
               stakedBalance: 0,
