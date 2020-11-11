@@ -1,6 +1,8 @@
 const config = {
  
   ethPoolAddress: '0xE6b89C4b7cEA47cFbE60609d0C490389705137bc',
+  linkPoolAddress: '0xE6b89C4b7cEA47cFbE60609d0C490389705137bc',
+ 
   govPoolABI: [
     {
       anonymous: false,
