@@ -212,16 +212,16 @@ class Store {
           ],
         },
         {
-          id: 'teth',
-          name: 'Test-eth',
+          id: 'bifi',
+          name: 'bifi',
           brief: 'test.eth',
           link: 'https://ropsten.etherscan.io/token/0x9bB6E0Ed72F18857320C777be1eB7680630b33cb',
           depositsEnabled: true,
           tokens: [
             {
-              id: 'teth',
+              id: 'bifi',
               address: '0x9bB6E0Ed72F18857320C777be1eB7680630b33cb',
-              symbol: 'teth',
+              symbol: 'bifi',
               abi: config.erc20ABI,
               rewardsToken: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
               rewardsAddress: config.bifiPoolAddress,
