@@ -3,7 +3,7 @@ import { WalletConnectConnector } from '@web3-react/walletconnect-connector';
 
 const POLLING_INTERVAL = 12000;
 const RPC_URLS = {
-  3: 'https://bsc-dataseed.binance.org/',
+  3: 'https://ropsten.etherscan.io/',
 };
 
 export const injected = new InjectedConnector({
