@@ -213,7 +213,7 @@ class Store {
         },
         {
           id: 'bifi',
-          name: 'bifi',
+          name: 'TETH',
           brief: 'test.eth',
           link: 'https://ropsten.etherscan.io/token/0x9bB6E0Ed72F18857320C777be1eB7680630b33cb',
           depositsEnabled: true,
