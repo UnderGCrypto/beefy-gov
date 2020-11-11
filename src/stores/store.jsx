@@ -85,16 +85,16 @@ class Store {
         },
 
         {
-          id: 'eth',
-          name: 'ETH',
+          id: 'tETH',
+          name: 'Test ETH',
           brief: 'Ethereum Token',
           link: 'https://ethereum.org',
           depositsEnabled: true,
           tokens: [
             {
-              id: 'eth',
-              address: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
-              symbol: 'eth',
+              id: 'teth',
+              address: '0x9bB6E0Ed72F18857320C777be1eB7680630b33cb',
+              symbol: 'teth',
               abi: config.erc20ABI,
               rewardsToken: '0x04b60a0e6aa7f9e36754ad8d24a66f47df0123ee',
               rewardsAddress: config.ethPoolAddress,
