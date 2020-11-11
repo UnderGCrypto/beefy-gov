@@ -209,7 +209,7 @@ class RewardPools extends Component {
         </a>
         <Typography varian="h4" className={classes.contractLabel} align="center">
           Contract Address:
-          <a href={`https://bscscan.com/address/${addy}`} target="_blank" rel="noopener noreferrer" className={classes.contractAddress}>
+          <a href={`https://ropsten.etherscan.io/address/${addy}`} target="_blank" rel="noopener noreferrer" className={classes.contractAddress}>
             {` ${address}`}
           </a>
         </Typography>
