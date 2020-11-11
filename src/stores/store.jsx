@@ -221,7 +221,7 @@ class Store {
             {
               id: 'tETH',
               address: '0x9bB6E0Ed72F18857320C777be1eB7680630b33cb',
-              symbol: 'bifi',
+              symbol: 'tETH',
               abi: config.erc20ABI,
               rewardsToken: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
               rewardsAddress: config.bifiPoolAddress,
